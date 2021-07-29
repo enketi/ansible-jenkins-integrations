@@ -6,5 +6,8 @@
           - debug:
                   msg: "pong"
           - debug:
-                  var: user
+                  var: useri
+          - win_copy:
+                  content: "{{ user }} is testing"
+                  dest: "C:/Users/Administrator/Desktop/simple.txt"
 ...
