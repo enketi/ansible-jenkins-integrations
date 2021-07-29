@@ -16,6 +16,12 @@ pipeline {
                 ansiblePlaybook credentialsId: 'ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'playbook.yml', vaultCredentialsId: 'vault-pass'
                 
             }
+        stage('Window Update') {
+            steps {
+                echo 'Hello World'
+                ansiblePlaybook credentialsId: 'ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'win_update.yml', vaultCredentialsId: 'vault-pass'
+                
+            }
         }
     }
 }
