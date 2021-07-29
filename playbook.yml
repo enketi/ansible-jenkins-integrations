@@ -1,0 +1,10 @@
+---
+- hosts: localhost
+  vars_files:
+          - sec.yml
+  tasks:
+          - debug:
+                  msg: "pong"
+          - debug:
+                  var: user
+...
