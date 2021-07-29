@@ -1,0 +1,22 @@
+pipeline {
+    agent any
+
+    stages {
+        stage('Download Repo') {
+            steps {
+                echo 'Hello World'
+                git 'https://github.com/enketi/ansible-jenkins-integrations.git'
+                sh 'sudo cp -rvf * /home/jenkins/ansiblerepo'
+                 }
+        }
+
+        stage('Hello') {
+            steps {
+                echo 'Hello World'
+                ansiblePlaybook credentialsId: 'ansible', disableHostKeyChecking: true, installation: 'ansible', inventory: 'inventory', playbook: 'playbook.yml', vaultCredentialsId: 'vault-pass'
+                
+            }
+        }
+    }
+}
+
