@@ -1,1 +1,8 @@
 # inventory
+[win]
+3.96.160.5
+
+[win:vars]
+ansible_user=Administrator
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore
